@@ -1,0 +1,18 @@
+%h1 Listing acts
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @acts.each do |act|
+    %tr
+      %td= act.description
+      %td= link_to image_tag('lupa.png', :size=>"30x30"), act
+      %td= link_to image_tag('lapiz.png', :size=>"30x30"), edit_act_path(act)
+      %td= link_to image_tag('trash.png', :size=>"30x30"), act, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Act', new_act_path, :class=>'btn btn-primary'

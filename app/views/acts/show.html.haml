@@ -1,0 +1,10 @@
+.container
+  .span12
+    .well
+      %p#notice= notice
+
+      = @act.description
+    .well
+      = link_to 'Edit', edit_act_path(@act)
+      \|
+      = link_to 'Back', acts_path
