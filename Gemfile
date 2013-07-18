@@ -43,3 +43,10 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 gem "haml"
 gem "haml-rails"
+
+gem "bootstrap-datepicker-rails"
+
+gem 'jquery-rails'
+gem "aws-sdk"
+gem "kaminari"
+gem 'unicorn'
