@@ -1,0 +1,14 @@
+= form_for @erogenous_zone do |f|
+  - if @erogenous_zone.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@erogenous_zone.errors.count, "error")} prohibited this erogenous_zone from being saved:"
+      %ul
+        - @erogenous_zone.errors.full_messages.each do |msg|
+          %li= msg
+
+  .control-group
+    %label.control-label= 'Name:'
+    .controls
+      = f.text_field :name
+  .actions
+    = f.submit 'Save'

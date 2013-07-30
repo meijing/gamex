@@ -1,0 +1,11 @@
+.container
+  .span12
+    .well
+      %p#notice= notice
+
+      = @erogenous_zone.name
+    .well
+      = link_to 'Edit', edit_erogenous_zone_path(@erogenous_zone)
+      \|
+      = link_to 'Back', erogenous_zones_path
+

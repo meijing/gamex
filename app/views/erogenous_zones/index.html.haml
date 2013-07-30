@@ -1,0 +1,19 @@
+%h1 Listing erogenous_zones
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @erogenous_zones.each do |erogenous_zone|
+    %tr
+      %td= erogenous_zone.name
+      %td= link_to image_tag('lupa.png', :size=>"30x30"), erogenous_zone
+      %td= link_to image_tag('lapiz.png', :size=>"30x30"), edit_erogenous_zone_path(erogenous_zone)
+      %td= link_to image_tag('trash.png', :size=>"30x30"), erogenous_zone, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  
+%br
+
+= link_to 'New Erogenous zone', new_erogenous_zone_path, :class=>'btn btn-primary'
+= link_to 'Back', home_path, :class=>'btn btn-danger'
