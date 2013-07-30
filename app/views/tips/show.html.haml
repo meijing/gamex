@@ -1,0 +1,10 @@
+.container
+  .span12
+    .well
+      %p#notice= notice
+
+      = @tip.text
+    .well
+      = link_to 'Edit', edit_tip_path(@tip)
+      \|
+      = link_to 'Back', tips_path

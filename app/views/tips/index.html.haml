@@ -1,0 +1,19 @@
+%h1 Listing tips
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @tips.each do |tip|
+    %tr
+      %td= tip.text
+      %td= link_to image_tag('lupa.png', :size=>"30x30"), tip
+      %td= link_to image_tag('lapiz.png', :size=>"30x30"), edit_tip_path(tip)
+      %td= link_to image_tag('trash.png', :size=>"30x30"), tip, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Tip', new_tip_path, :class=>'btn btn-primary'
+= link_to 'Back', home_path, :class=>'btn btn-danger'
