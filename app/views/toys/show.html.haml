@@ -1,0 +1,10 @@
+.container
+  .span12
+    .well
+      %p#notice= notice
+
+      = @toy.name
+    .well
+      = link_to 'Edit', edit_toy_path(@toy)
+      \|
+      = link_to 'Back', toys_path

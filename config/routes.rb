@@ -1,4 +1,6 @@
 Sex::Application.routes.draw do
+  resources :toys
+
   resources :erogenous_zones
 
   resources :acts

@@ -1,0 +1,14 @@
+= form_for @toy do |f|
+  - if @toy.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@toy.errors.count, "error")} prohibited this toy from being saved:"
+      %ul
+        - @toy.errors.full_messages.each do |msg|
+          %li= msg
+
+  .control-group
+    %label.control-label= 'Name:'
+    .controls
+      = f.text_field :name
+  .actions
+    = f.submit 'Save'
