@@ -1,0 +1,10 @@
+= form_for @toy_act do |f|
+  - if @toy_act.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@toy_act.errors.count, "error")} prohibited this toy_act from being saved:"
+      %ul
+        - @toy_act.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

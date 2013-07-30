@@ -1,4 +1,6 @@
 Sex::Application.routes.draw do
+  resources :toy_acts
+
   resources :accessories
 
   resources :tips

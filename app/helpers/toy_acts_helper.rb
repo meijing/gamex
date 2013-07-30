@@ -1,0 +1,2 @@
+module ToyActsHelper
+end

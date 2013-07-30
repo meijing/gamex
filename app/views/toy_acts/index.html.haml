@@ -1,0 +1,17 @@
+%h1 Listing toy_acts
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @toy_acts.each do |toy_act|
+    %tr
+      %td= link_to 'Show', toy_act
+      %td= link_to 'Edit', edit_toy_act_path(toy_act)
+      %td= link_to 'Destroy', toy_act, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Toy act', new_toy_act_path
