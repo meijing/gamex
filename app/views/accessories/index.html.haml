@@ -1,0 +1,20 @@
+%h1 Listing accessories
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @accessories.each do |accessory|
+    %tr
+      %td= accessory.name
+      %td= link_to image_tag('lupa.png', :size=>"30x30"), accessory
+      %td= link_to image_tag('lapiz.png', :size=>"30x30"), edit_accessory_path(accessory)
+      %td= link_to image_tag('trash.png', :size=>"30x30"), accessory, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Accessory', new_accessory_path, :class=>'btn btn-primary'
+= link_to 'Back', home_path, :class=>'btn btn-danger'
+
