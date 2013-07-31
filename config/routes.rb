@@ -12,6 +12,7 @@ Sex::Application.routes.draw do
   resources :acts
 
   match 'home' => 'home#index', :as => :home
+  match 'relationships' => 'home#relationships', :as => :relationships
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
