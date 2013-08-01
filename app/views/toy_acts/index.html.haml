@@ -25,14 +25,4 @@
               - if !@toy_act.nil? && !@toy_act.sex.nil?
                 - if @toy_act.sex == 0
                   = link_to image_tag ('circle_blue_24_ns.png', :size=>"35x35"), @toy_act, :method => :delete, :data => { :confirm => 'Are you sure?' }
-                - elsif @toy_act.sex == 1
-                  = link_to image_tag ('circle_red_24_ns.png', :size=>"35x35"), @toy_act, :method => :delete, :data => { :confirm => 'Are you sure?' }
-                - elsif @toy_act.sex == 2
-                  = link_to image_tag ('circle_green_24_ns.png', :size=>"35x35"), @toy_act, :method => :delete, :data => { :confirm => 'Are you sure?' }
-              - else
-                = link_to image_tag('circle_blue_24_ns.png', :size=>"15x15"), create_toy_act_path(:toy_id=>toy.id, :act_id=>act.id, :sex=>0)
-                = link_to image_tag('circle_red_24_ns.png', :size=>"15x15"), create_toy_act_path(:toy_id=>toy.id, :act_id=>act.id, :sex=>1)
-                = link_to image_tag('circle_green_24_ns.png', :size=>"15x15"), create_toy_act_path(:toy_id=>toy.id, :act_id=>act.id, :sex=>2)
-          
-
-    
+     
