@@ -1,0 +1,38 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      .nav-collapse.collapse
+        %table.table.table-bordered.table-striped.table-hover
+          %thead
+            %tr
+              %th.tamanho_celda_primeira Accion
+              - @acts.each do |act|
+                %th.tamanho_celda= act.description[0..5]
+
+.container
+  %section
+    %br
+    %br
+    %br
+    = link_to 'Back', relationships_path, :class=>'btn btn-danger'
+    
+    %table.table.table-bordered.table-striped.table-hover
+      - @accessories.each do |accessory|
+        %tr
+          %td.tamanho_celda_primeira_toys= accessory.name
+          - @acts.each do |act|
+            %td.tamanho_celda
+              - @accessory_act = findby_accessory_and_act(accessory.id, act.id)
+              - if !@accessory_act.nil? && !@accessory_act.sex.nil?
+                - if @accessory_act.sex == 0
+                  = link_to(image_tag('circle_blue_24_ns.png', :size=>"35x35"), @accessory_act, :method => :delete, :data => { :confirm => 'Are you sure?' })
+                - elsif @accessory_act.sex == 1
+                  = link_to(image_tag('circle_red_24_ns.png', :size=>"35x35"), @accessory_act, :method => :delete, :data => { :confirm => 'Are you sure?' })
+                - elsif @accessory_act.sex == 2
+                  = link_to(image_tag('circle_green_24_ns.png', :size=>"35x35"), @accessory_act, :method => :delete, :data => { :confirm => 'Are you sure?' })
+              - else
+                = link_to(image_tag('circle_blue_24_ns.png', :size=>"15x15"), create_accessory_act_path(:accessory_id=>accessory.id, :act_id=>act.id, :sex=>0))
+                = link_to(image_tag('circle_red_24_ns.png', :size=>"15x15"), create_accessory_act_path(:accessory_id=>accessory.id, :act_id=>act.id, :sex=>1))
+                = link_to(image_tag('circle_green_24_ns.png', :size=>"15x15"), create_accessory_act_path(:accessory_id=>accessory.id, :act_id=>act.id, :sex=>2))
+  
+= link_to 'Back', relationships_path, :class=>'btn btn-danger'
