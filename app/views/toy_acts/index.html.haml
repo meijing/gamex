@@ -23,5 +23,5 @@
             %td.tamanho_celda
               - @toy_act = findby_toy_and_act(toy.id, act.id)
               - if !@toy_act.nil? && !@toy_act.sex.nil?
-                d
+                = link_to p, @toy_act, :method => :delete, :data => { :confirm => 'Are you sure?' }
      
