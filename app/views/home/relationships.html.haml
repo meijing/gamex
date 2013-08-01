@@ -3,26 +3,6 @@
   .row
     .span6
       .well
-        %h2= link_to 'Acts', acts_path
+        %h2= link_to 'Acts + toys', toy_acts_path
         
-    .span6
-      .well
-        %h2=link_to 'Erogenous zones', erogenous_zones_path  
-  
-  .row
-    .span4
-      .well
-        %h2=link_to 'Toys', toys_path  
-
-    .span4
-      .well
-        %h2=link_to 'Tips', tips_path 
-    
-    .span4
-      .well
-        %h2=link_to 'Accessories', accessories_path  
-
-  .row
-    .span12
-      .well
-        %h2= link_to 'Relationships', acts_path
+  = link_to 'Back', home_path, :class=>'btn btn-danger'

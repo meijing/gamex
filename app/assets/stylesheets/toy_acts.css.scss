@@ -1,3 +1,16 @@
 // Place all the styles related to the toy_acts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.tamanho_celda{
+    width:40px;
+     word-wrap: break-word;
+    letter-spacing:0px;
+}
+
+.tamanho_celda_primeira{
+    width:300px;
+}
+
+.tamanho_celda_primeira_toys{
+    width:70px;
+}

@@ -3,6 +3,8 @@ class ToyActsController < ApplicationController
   # GET /toy_acts.json
   def index
     @toy_acts = ToyAct.all
+    @toys = Toy.all
+    @acts = Act.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +81,15 @@ class ToyActsController < ApplicationController
       format.html { redirect_to toy_acts_url }
       format.json { head :no_content }
     end
+  end
+  
+  def create_toy_act
+    @toy_act = ToyAct.new
+    @toy_act.act_id = params[:act_id]
+    @toy_act.toy_id = params[:toy_id]
+    @toy_act.sex = params[:sex]
+    @toy_act.save
+    
+    redirect_to(toy_acts_path)
   end
 end
