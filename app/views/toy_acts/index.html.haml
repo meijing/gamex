@@ -8,3 +8,18 @@
               %th.tamanho_celda_primeira Accion
               - @acts.each do |act|
                 %th.tamanho_celda= act.description[0..5]
+
+.container
+  %section
+    %br
+    %br
+    %br
+    %br
+    %table.table.table-bordered.table-striped.table-hover
+      - @toys.each do |toy|
+        %tr
+          %td.tamanho_celda_primeira_toys= toy.name
+          - @acts.each do |act|
+            %td.tamanho_celda
+              - @toy_act = findby_toy_and_act(toy.id, act.id)
+         
