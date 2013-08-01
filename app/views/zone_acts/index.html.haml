@@ -1,0 +1,17 @@
+%h1 Listing zone_acts
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @zone_acts.each do |zone_act|
+    %tr
+      %td= link_to 'Show', zone_act
+      %td= link_to 'Edit', edit_zone_act_path(zone_act)
+      %td= link_to 'Destroy', zone_act, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Zone act', new_zone_act_path

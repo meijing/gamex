@@ -1,0 +1,2 @@
+module ZoneActsHelper
+end

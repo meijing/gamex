@@ -1,4 +1,6 @@
 Sex::Application.routes.draw do
+  resources :zone_acts
+
   resources :toy_acts
 
   resources :accessories
