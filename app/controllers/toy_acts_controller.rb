@@ -2,13 +2,11 @@ class ToyActsController < ApplicationController
   # GET /toy_acts
   # GET /toy_acts.json
   def index
-    @toy_acts = ToyAct.all
     @toys = Toy.all
     @acts = Act.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @toy_acts }
     end
   end
 

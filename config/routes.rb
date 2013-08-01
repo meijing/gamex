@@ -15,7 +15,10 @@ Sex::Application.routes.draw do
 
   match 'home' => 'home#index', :as => :home
   match 'relationships' => 'home#relationships', :as => :relationships
+  
   match 'create_toy_act' => 'toy_acts#create_toy_act', :as => :create_toy_act
+  match 'create_zone_act' => 'zone_acts#create_zone_act', :as => :create_zone_act
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

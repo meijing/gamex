@@ -2,11 +2,11 @@ class ZoneActsController < ApplicationController
   # GET /zone_acts
   # GET /zone_acts.json
   def index
-    @zone_acts = ZoneAct.all
+    @zones = ErogenousZone.all
+    @acts = Act.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @zone_acts }
     end
   end
 
@@ -79,5 +79,15 @@ class ZoneActsController < ApplicationController
       format.html { redirect_to zone_acts_url }
       format.json { head :no_content }
     end
+  end
+  
+  def create_zone_act
+    @zone_act = ZoneAct.new
+    @zone_act.act_id = params[:act_id]
+    @zone_act.erogenous_zone_id = params[:zone_id]
+    @zone_act.sex = params[:sex]
+    @zone_act.save
+    
+    redirect_to(zone_acts_path)
   end
 end

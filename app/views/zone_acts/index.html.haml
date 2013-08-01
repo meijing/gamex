@@ -1,17 +1,36 @@
-%h1 Listing zone_acts
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      .nav-collapse.collapse
+        %table.table.table-bordered.table-striped.table-hover
+          %thead
+            %tr
+              %th.tamanho_celda_primeira Accion
+              - @acts.each do |act|
+                %th.tamanho_celda= act.description[0..5]
 
-%table
-  %tr
-    %th
-    %th
-    %th
-
-  - @zone_acts.each do |zone_act|
-    %tr
-      %td= link_to 'Show', zone_act
-      %td= link_to 'Edit', edit_zone_act_path(zone_act)
-      %td= link_to 'Destroy', zone_act, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Zone act', new_zone_act_path
+.container
+  %section
+    %br
+    %br
+    %br
+    = link_to 'Back', relationships_path, :class=>'btn btn-danger'
+    %table.table.table-bordered.table-striped.table-hover
+      - @zones.each do |zone|
+        %tr
+          %td.tamanho_celda_primeira_toys= zone.name
+          - @acts.each do |act|
+            %td.tamanho_celda
+              - @zone_act = findby_zone_and_act(zone.id, act.id)
+              - if !@zone_act.nil? && !@zone_act.sex.nil?
+                - if @zone_act.sex == 0
+                  = link_to(image_tag('circle_blue_24_ns.png', :size=>"35x35"), @zone_act, :method => :delete, :data => { :confirm => 'Are you sure?' })
+                - elsif @zone_act.sex == 1
+                  = link_to(image_tag('circle_red_24_ns.png', :size=>"35x35"), @zone_act, :method => :delete, :data => { :confirm => 'Are you sure?' })
+                - elsif @zone_act.sex == 2
+                  = link_to(image_tag('circle_green_24_ns.png', :size=>"35x35"), @zone_act, :method => :delete, :data => { :confirm => 'Are you sure?' })
+              - else
+                = link_to(image_tag('circle_blue_24_ns.png', :size=>"15x15"), create_zone_act_path(:zone_id=>zone.id, :act_id=>act.id, :sex=>0))
+                = link_to(image_tag('circle_red_24_ns.png', :size=>"15x15"), create_zone_act_path(:zone_id=>zone.id, :act_id=>act.id, :sex=>1))
+                = link_to(image_tag('circle_green_24_ns.png', :size=>"15x15"), create_zone_act_path(:zone_id=>zone.id, :act_id=>act.id, :sex=>2))
+  = link_to 'Back', relationships_path, :class=>'btn btn-danger'
