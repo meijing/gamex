@@ -23,7 +23,7 @@ Sex::Application.routes.draw do
   match 'create_toy_act' => 'toy_acts#create_toy_act', :as => :create_toy_act
   match 'create_zone_act' => 'zone_acts#create_zone_act', :as => :create_zone_act
   match 'create_accessory_act' => 'accessory_acts#create_accessory_act', :as => :create_accessory_act
-  match 'create_zone_toy' => 'zone_toy#create_zone_toy', :as => :create_zone_toy
+  match 'create_zone_toy' => 'toy_zones#create_zone_toy', :as => :create_zone_toy
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

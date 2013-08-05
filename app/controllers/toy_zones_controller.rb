@@ -88,6 +88,6 @@ class ToyZonesController < ApplicationController
     @zone_toy.sex = params[:sex]
     @zone_toy.save
     
-    redirect_to(zone_toys_path)
+    redirect_to(toy_zones_path)
   end
 end
