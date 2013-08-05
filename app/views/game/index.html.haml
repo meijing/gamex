@@ -1,0 +1,24 @@
+%h1 GameSex
+= link_to 'Management', home_path
+
+.container.proba_fondo5
+  .row
+    .span6.proba_fondo4
+      .box
+        %h2 Jugador 1, elige
+        =image_tag ('female.png', :size=>"80x80")
+        =image_tag ('male.png', :size=>"80x80")
+    .span6.proba_fondo4
+      .box
+        %h2 Jugador 2, elige
+        =image_tag ('female.png', :size=>"80x80")
+        =image_tag ('male.png', :size=>"80x80")
+
+  .row
+    .span4
+      =image_tag ('configuration_edit.png', :size=>"40x40")
+    .span8
+      Si no configuras tus preferencias las tiradas serán aleatorias
+      = link_to 'COMIENZA A JUGAR!', home_path, :class=>'btn btn-danger'
+      
+        

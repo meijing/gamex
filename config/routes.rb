@@ -17,13 +17,18 @@ Sex::Application.routes.draw do
 
   resources :acts
 
+  match 'management' => 'home#index', :as => :management
   match 'home' => 'home#index', :as => :home
   match 'relationships' => 'home#relationships', :as => :relationships
   
+  #para o mantemento das relacions
   match 'create_toy_act' => 'toy_acts#create_toy_act', :as => :create_toy_act
   match 'create_zone_act' => 'zone_acts#create_zone_act', :as => :create_zone_act
   match 'create_accessory_act' => 'accessory_acts#create_accessory_act', :as => :create_accessory_act
   match 'create_zone_toy' => 'toy_zones#create_zone_toy', :as => :create_zone_toy
+  
+  #para o xogo
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -74,7 +79,7 @@ Sex::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'home#index'
+   root :to => 'game#index'
 
   # See how all your routes lay out with "rake routes"
 
