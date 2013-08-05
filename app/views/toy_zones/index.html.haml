@@ -1,0 +1,39 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      .nav-collapse.collapse
+        %table.table.table-bordered.table-striped.table-hover
+          %thead
+            %tr
+              - @toys.each do |toy|
+                %th.tamanho_celda= toy.id.to_s.concat("\n").concat(toy.name[0..5])
+
+.container
+  %section
+    %br
+    %br
+    %br
+    %br
+    %br
+    = link_to 'Back', relationships_path, :class=>'btn btn-danger'
+    %table.table.table-bordered.table-striped.table-hover
+      - @zones.each do |zone|
+      
+        %tr
+          %td.tamanho_celda_primeira_toys= zone.name
+          - @toys.each do |toy|
+            %td.tamanho_celda
+              - @zone_toy = findby_zone_and_toy(zone.id, toy.id)
+              - if !@zone_toy.nil? && !@zone_toy.sex.nil?
+                - if @zone_toy.sex == 0
+                  = link_to(image_tag('circle_blue_24_ns.png', :size=>"35x35"), @zone_toy, :method => :delete, :data => { :confirm => 'Are you sure?' })
+                - elsif @zone_toy.sex == 1
+                  = link_to(image_tag('circle_red_24_ns.png', :size=>"35x35"), @zone_toy, :method => :delete, :data => { :confirm => 'Are you sure?' })
+                - elsif @zone_toy.sex == 2
+                  = link_to(image_tag('circle_green_24_ns.png', :size=>"35x35"), @zone_toy, :method => :delete, :data => { :confirm => 'Are you sure?' })
+              - else
+                = toy.id
+                = link_to(image_tag('circle_blue_24_ns.png', :size=>"15x15"), create_zone_toy_path(:zone_id=>zone.id, :toy_id=>toy.id, :sex=>0))
+                = link_to(image_tag('circle_red_24_ns.png', :size=>"15x15"), create_zone_toy_path(:zone_id=>zone.id, :toy_id=>toy.id, :sex=>1))
+                = link_to(image_tag('circle_green_24_ns.png', :size=>"15x15"), create_zone_toy_path(:zone_id=>zone.id, :toy_id=>toy.id, :sex=>2))
+  = link_to 'Back', relationships_path, :class=>'btn btn-danger'
