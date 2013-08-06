@@ -13,7 +13,7 @@ background-color:#560319;
 }
 
 .proba_fondo4{
-background-color:#3c0f18;
+    background-color:#3c0f18;
 }
 .proba_fondo5{
 background-color:#711324;
@@ -22,7 +22,14 @@ background-color:#711324;
 background-color:#6a0a22;
 }
 .proba_fondo7{
-background-color:#793c47;
+    margin:10px;
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align:center;
+}
+
+.sex_selected{
+    background-color:#793c47;
 }
 .proba_fondo8{
 background-color:#7c2629;
@@ -30,4 +37,5 @@ background-color:#7c2629;
 
 .box{
     margin:20px;
+    text-align:center;
 }

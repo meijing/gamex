@@ -28,7 +28,9 @@ Sex::Application.routes.draw do
   match 'create_zone_toy' => 'toy_zones#create_zone_toy', :as => :create_zone_toy
   
   #para o xogo
-  
+    #seleccion de sexo
+    match 'game/select_player_1' => 'game#select_player_1', :as => :select_p1
+    match 'game/select_player_2' => 'game#select_player_2', :as => :select_p2
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

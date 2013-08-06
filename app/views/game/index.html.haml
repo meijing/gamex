@@ -5,14 +5,18 @@
   .row
     .span6.proba_fondo4
       .box
-        %h2 Jugador 1, elige
-        =image_tag ('female.png', :size=>"80x80")
-        =image_tag ('male.png', :size=>"80x80")
+        %h2 Jugador 1, elige:
+        .span5.proba_fondo7
+          =link_to(image_tag('female.png', :size=>"80x80"), select_p1_path(:sex_p_1=>1))
+        .span5.proba_fondo7
+          =link_to(image_tag('male.png', :size=>"80x80"), select_p1_path(:sex_p_1=>0))
     .span6.proba_fondo4
       .box
-        %h2 Jugador 2, elige
-        =image_tag ('female.png', :size=>"80x80")
-        =image_tag ('male.png', :size=>"80x80")
+        %h2 Jugador 2, elige:
+        .span5.proba_fondo7
+          =link_to(image_tag('female.png', :size=>"80x80"), select_p2_path(:sex_p_2=>1))
+        .span5.proba_fondo7
+          =link_to(image_tag('male.png', :size=>"80x80"), select_p2_path(:sex_p_2=>0))
 
   .row
     .span4
@@ -21,4 +25,4 @@
       Si no configuras tus preferencias las tiradas serán aleatorias
       = link_to 'COMIENZA A JUGAR!', home_path, :class=>'btn btn-danger'
       
-        
+  
