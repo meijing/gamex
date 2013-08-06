@@ -6,17 +6,13 @@
     .span6.proba_fondo4
       .box
         %h2 Jugador 1, elige:
-        .span5.proba_fondo7
-          =link_to(image_tag('female.png', :size=>"80x80"), select_p1_path(:sex_p_1=>1))
-        .span5.proba_fondo7
-          =link_to(image_tag('male.png', :size=>"80x80"), select_p1_path(:sex_p_1=>0))
+        = get_sex_p1(@sex_p1, 'female.png', 1)
+        = get_sex_p1(@sex_p1, 'male.png', 0)
     .span6.proba_fondo4
       .box
         %h2 Jugador 2, elige:
-        .span5.proba_fondo7
-          =link_to(image_tag('female.png', :size=>"80x80"), select_p2_path(:sex_p_2=>1))
-        .span5.proba_fondo7
-          =link_to(image_tag('male.png', :size=>"80x80"), select_p2_path(:sex_p_2=>0))
+        = get_sex_p2(@sex_p2, 'female.png', 1)
+        = get_sex_p2(@sex_p2, 'male.png', 0)
 
   .row
     .span4

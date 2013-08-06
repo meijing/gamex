@@ -1,5 +1,8 @@
 class GameController < ApplicationController
   def index
+    @sex_p1 = session[:sex_p1]
+    @sex_p2 = session[:sex_p2]
+
     respond_to do |format|
       format.html # index.html.erb
     end
