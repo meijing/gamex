@@ -46,4 +46,39 @@ background-color:#7c2629;
     padding-bottom:20px;
     text-align:center;
 background-color:#793c47;
+} 
+
+.result {
+    padding: 10px;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    
+    display: inline-block;
+    height: 200px;
+    width: 175px;
+    *display:inline;
+    background-repeat:no-repeat;
+    background-position:center center;
+}
+
+.result h4{
+    padding-top:15%;
+    padding-left:39%;
+    color:#1e262c;
+}
+
+.button_zone{
+    background-image:url('button_green_on.png');
+}
+
+.button_act{
+    background-image:url('button_red_on.png');
+}
+
+.button_toy{
+    background-image:url('button_yellow_on.png');
+}
+
+.button_bar{
+    text-align:center;
 }

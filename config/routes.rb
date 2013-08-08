@@ -32,6 +32,8 @@ Sex::Application.routes.draw do
     match 'game/select_player_1' => 'game#select_player_1', :as => :select_p1
     match 'game/select_player_2' => 'game#select_player_2', :as => :select_p2
   
+    #xogo
+    match 'game/play' => 'game#play', :as => :play
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,30 @@
+%h1 GameSex
+= link_to 'Management', home_path
+
+.container.proba_fondo5
+  .row
+    .span12.proba_fondo4
+      .box
+        %h2= 'Jugador '.concat(@actual_player.to_s).concat(' te toca')
+
+  .row
+    .span5.result.button_act
+      %h4 zona
+
+    .span6.result.button_toy
+      %h4 accion
+
+  .row
+    .span12.button_bar
+      = link_to 'Pasar', play_path, :class=>'btn btn-default'
+      = link_to 'HECHO!!', play_path, :class=>'btn btn-success'
+
+
+  .row
+    .span5.result.button_zone
+      %h4 xoguete
+
+    .span6.result.button_zone
+      %h4 accesorio
+  
+ 
