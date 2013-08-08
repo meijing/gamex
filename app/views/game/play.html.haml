@@ -9,22 +9,22 @@
 
   .row
     .span5.result.button_act
-      %h4 zona
+      %h3= @act.description.gsub(" ", "<br/>").html_safe
 
-    .span6.result.button_toy
-      %h4 accion
+    .span6.result.button_zone
+      %h3= @zone.name.gsub(" ", "<br/>").html_safe
 
   .row
     .span12.button_bar
-      = link_to 'Pasar', play_path, :class=>'btn btn-default'
-      = link_to 'HECHO!!', play_path, :class=>'btn btn-success'
+      = link_to 'Pasar', pass_path, :class=>'btn btn-default'
+      = link_to 'HECHO!!', done_path, :class=>'btn btn-success'
 
 
   .row
-    .span5.result.button_zone
-      %h4 xoguete
+    .span5.result.button_toy
+      %h3= @toy.name.gsub(" ", "<br/>").html_safe
 
     .span6.result.button_zone
-      %h4 accesorio
+      %h3 accesorio
   
  

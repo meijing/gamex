@@ -25,6 +25,11 @@ class GameController < ApplicationController
     
     session[:who_play] = 1
     @actual_player = session[:who_play]
+    
+    #obtencion dos valores aleatorios
+    @zone = ErogenousZone.get_random_zone
+    @act = Act.get_act_random(@zone.id) unless @zone.nil?
+    @toy = Toy.get_toy_random(@zone.id, @act.id) unless @zone.nil? && @act.nil?
   end
   
   def pass_turn
@@ -33,6 +38,8 @@ class GameController < ApplicationController
     else
       session[:who_play] = 1
     end
+    
+    redirect_to(play_path)
   end
   
   def done
@@ -41,6 +48,7 @@ class GameController < ApplicationController
     else
       session[:who_play] = 1
     end
+    redirect_to(play_path)
   end
 
 end

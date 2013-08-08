@@ -34,6 +34,8 @@ Sex::Application.routes.draw do
   
     #xogo
     match 'game/play' => 'game#play', :as => :play
+    match 'game/done' => 'game#done', :as => :done
+    match 'game/pass' => 'game#pass_turn', :as => :pass
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

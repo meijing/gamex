@@ -50,3 +50,5 @@ gem 'jquery-rails'
 gem "aws-sdk"
 gem "kaminari"
 gem 'unicorn'
+
+gem 'randumb'
