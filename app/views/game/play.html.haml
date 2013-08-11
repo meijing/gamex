@@ -22,7 +22,9 @@
 
   .row
     .span5.result.button_toy
-      %h3= @toy.name.gsub(" ", "<br/>").html_safe
+      %h3
+        -if !@toy.nil?
+          =@toy.name.gsub(" ", "<br/>").html_safe
 
     .span6.result.button_zone
       %h3 accesorio
