@@ -15,10 +15,11 @@
       %h3= @zone.name.gsub(" ", "<br/>").html_safe
 
   .row
-    .span12.button_bar
+    .span5.button_bar.button_done.left
+      = link_to done_path, :title => "Hecho" do
+        %h3 Hecho!
+    .span6.button_bar.right
       = link_to 'Pasar', pass_path, :class=>'btn btn-default'
-      = link_to 'HECHO!!', done_path, :class=>'btn btn-success'
-
 
   .row
     .span5.result.button_toy

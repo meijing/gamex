@@ -80,11 +80,31 @@ background-color:#793c47;
 }
 
 .button_bar{
-    text-align:center;
+    height: 90px;
+    width: 115px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);  
+    display: inline-block;
+    *display:inline;
+    background-repeat:no-repeat;
+    background-position:right center;
 }
 
-.p{
--webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.button_done{
+    background-image:url('clean.png');
+}
+
+.button_done h3{
+    padding-top:2%;
+    color:#1e262c;
+}
+
+.left{
+    padding-right:3%;
+    padding-top:3%;
+    text-align: right;
+}
+
+.right{
+    text-align: left;
+    padding-top:3%;
 }

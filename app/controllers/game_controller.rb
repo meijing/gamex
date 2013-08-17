@@ -23,13 +23,27 @@ class GameController < ApplicationController
       #mostrar mensaje de errror 
     end
     
-    session[:who_play] = 1
+    if session[:who_play].nil?
+      session[:who_play] = 1
+      @sex_other_player = session[:sex_p2]
+    end
     @actual_player = session[:who_play]
     
+    if session[:who_play] == 1
+      @sex_other_player = session[:sex_p2]
+    else
+      @sex_other_player = session[:sex_p1]
+    end
+    
     #obtencion dos valores aleatorios
-    @zone = ErogenousZone.get_random_zone
-    @act = Act.get_act_random(@zone.id) unless @zone.nil?
-    @toy = Toy.get_toy_random(@zone.id, @act.id) unless @zone.nil? && @act.nil?
+    @zone = ErogenousZone.get_random_zone(@sex_other_player)
+    p '---------------------'
+    p @actual_player
+    p @sex_other_player
+    p @zone
+    @act = ZoneAct.get_act_random(@zone.id) unless @zone.nil?
+    p @act
+   # @toy = Toy.get_toy_random(@zone.id, @act.id) unless @zone.nil? && @act.nil?
   end
   
   def pass_turn
@@ -38,7 +52,6 @@ class GameController < ApplicationController
     else
       session[:who_play] = 1
     end
-    
     redirect_to(play_path)
   end
   
