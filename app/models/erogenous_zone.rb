@@ -4,6 +4,6 @@ class ErogenousZone < ActiveRecord::Base
    has_many :zone_acts
    
   def self.get_random_zone(sex)
-    ErogenousZone.where('sex=?',sex).random()
+    ErogenousZone.where('sex=? or sex=2',sex).random()
   end
 end
