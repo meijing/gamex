@@ -40,11 +40,11 @@ class GameController < ApplicationController
     #obtencion dos valores aleatorios
     @zone = ErogenousZone.get_random_zone(@sex_other_player)
     p '---------------------'
-    p '@actual_playe '+@actual_player
-    p '@sex_other_player '+@sex_other_player
-    p '@zone '+@zone
+    p '@actual_playe '+@actual_player.to_s
+    p '@sex_other_player '+@sex_other_player.to_s
+    p '@zone '+@zone.to_s
     @act = ZoneAct.get_act_random(@zone.id) unless @zone.nil?
-    p '@act '+@act
+    p '@act '+@act.to_s
    # @toy = Toy.get_toy_random(@zone.id, @act.id) unless @zone.nil? && @act.nil?
   end
   
