@@ -23,7 +23,9 @@ class GameController < ApplicationController
       #mostrar mensaje de errror 
     end
     
+    p '___________________________'
     if session[:who_play].nil?
+      p 'who'
       session[:who_play] = 1
       @sex_other_player = session[:sex_p2]
     end
