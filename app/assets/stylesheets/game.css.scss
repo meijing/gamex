@@ -45,38 +45,16 @@ background-color:#7c2629;
     padding-top:20px;
     padding-bottom:20px;
     text-align:center;
-background-color:#793c47;
+    background-color:#793c47;
 } 
 
-.result {
-    padding: 10px;
-    margin-bottom: 20px;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-    
-    display: inline-block;
-    height: 200px;
-    width: 175px;
-    *display:inline;
-    background-repeat:no-repeat;
-    background-position:center center;
+.header_footer_text{
+    margin-left:30%;
 }
-
-.result h3{
-    padding-top:10%;
-    padding-left:39%;
-    color:#1e262c;
-}
-
-.button_zone{
-    background-image:url('button_green_on.png');
-}
-
-.button_act{
-    background-image:url('button_green_on.png');
-}
-
-.button_toy{
-    background-image:url('sleepbot_128x128_32.png');
+.text{
+    text-shadow: 5px 5px 10px #000000;
+    margin-left:23%;
+    text-align:center;
 }
 
 .button_bar{

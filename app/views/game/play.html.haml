@@ -8,12 +8,15 @@
         %h2= 'Jugador '.concat(@actual_player.to_s).concat(' te toca')
 
   .row
-    .span5.result.button_act
-      %h3= @act.description.gsub(" ", "<br/>").html_safe
+    .span6
+      =image_tag 'cuadro19.png', :class=>'header_footer_text'
+      %h3.text= @act.description.gsub(" ", "<br/>").html_safe
+      =image_tag 'cuadro20.png', :class=>'header_footer_text'
 
-    .span6.result.button_zone
-      %h3= @zone.name.gsub(" ", "<br/>").html_safe
-
+    .span6
+      =image_tag 'cuadro19.png', :class=>'header_footer_text'
+      %h3.text= @zone.name.gsub(" ", "<br/>").html_safe
+      =image_tag 'cuadro20.png', :class=>'header_footer_text'
   .row
     .span5.button_bar.button_done.left
       = link_to done_path, :title => "Hecho" do
@@ -22,12 +25,16 @@
       = link_to 'Pasar', pass_path, :class=>'btn btn-default'
 
   .row
-    .span5.result.button_toy
+    .span6
       %h3
         -if !@toy.nil?
+          =image_tag 'cuadro19.png', :class=>'header_footer_text'
           =@toy.name.gsub(" ", "<br/>").html_safe
+          =image_tag 'cuadro20.png', :class=>'header_footer_text'
 
-    .span6.result.button_toy
-      %h3 accesorio
+    .span6
+      =image_tag 'cuadro19.png', :class=>'header_footer_text'
+      %h3.text accesorio
+      =image_tag 'cuadro20.png', :class=>'header_footer_text'
   
  

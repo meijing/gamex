@@ -11,7 +11,8 @@ class ZoneAct < ActiveRecord::Base
     @za = ZoneAct.by_zone(zone_id).random
     p'_----------'
     p @za
-    p Act.find(@za.act_id) 
-    Act.find(@za.act_id) unless @za.nil?
+   # p Act.find(@za.act_id) 
+#    Act.find(@za.act_id) unless @za.nil?
+    Act.find(12)
   end
 end
