@@ -4,8 +4,23 @@
 .container.proba_fondo5
   .row
     .span12.proba_fondo4
-      .box
-        %h2= 'Jugador '.concat(@actual_player.to_s).concat(' te toca')
+      .span4
+        .span1
+          = get_image_by_sex(@sex_p1)
+          %h5= 'Jugador '.concat(@actual_player.to_s)
+        .span2
+          %h5= 'Has hecho: '+@p1_done.to_s
+          %h5= 'Has pasado: '+@p1_pass.to_s
+      .span3
+        .box
+          %h2= 'Jugador '.concat(@actual_player.to_s).concat('<br/> te toca').html_safe
+      .span4
+        .span1
+          = get_image_by_sex(@sex_p2)
+          %h5= 'Jugador '.concat(@actual_player.to_s)
+        .span2
+          %h5= 'Has hecho: '+ @p2_done.to_s
+          %h5= 'Has pasado: '+@p2_pass.to_s
 
   .row
     .span6
@@ -18,23 +33,24 @@
       %h3.text= @zone.name.gsub(" ", "<br/>").html_safe
       =image_tag 'cuadro20.png', :class=>'header_footer_text'
   .row
-    .span5.button_bar.button_done.left
+    .span6.button_bar.button_done.left
       = link_to done_path, :title => "Hecho" do
         %h3 Hecho!
-    .span6.button_bar.right
+    .span5.button_bar.right
       = link_to 'Pasar', pass_path, :class=>'btn btn-default'
 
-  .row
-    .span6
-      %h3
-        -if !@toy.nil?
-          =image_tag 'cuadro19.png', :class=>'header_footer_text'
-          =@toy.name.gsub(" ", "<br/>").html_safe
-          =image_tag 'cuadro20.png', :class=>'header_footer_text'
+  -if 1==2
+    .row
+      .span6
+        %h3
+          -if !@toy.nil?
+            =image_tag 'cuadro19.png', :class=>'header_footer_text'
+            =@toy.name.gsub(" ", "<br/>").html_safe
+            =image_tag 'cuadro20.png', :class=>'header_footer_text'
 
-    .span6
-      =image_tag 'cuadro19.png', :class=>'header_footer_text'
-      %h3.text accesorio
-      =image_tag 'cuadro20.png', :class=>'header_footer_text'
+      .span6
+        =image_tag 'cuadro19.png', :class=>'header_footer_text'
+        %h3.text accesorio
+        =image_tag 'cuadro20.png', :class=>'header_footer_text'
   
  

@@ -19,14 +19,18 @@ class GameController < ApplicationController
   end
   
   def play
+    @sex_p1 = session[:sex_p1]
+    @sex_p2 = session[:sex_p2]
     if session[:sex_p1].nil? || session[:sex_p2].nil?
       #mostrar mensaje de errror 
     end
     
-    p '___________________________'
     if session[:who_play].nil?
-      p 'who'
       session[:who_play] = 1
+      session[:p1_pass] = 0
+      session[:p2_pass] = 0
+      session[:p1_done] = 0
+      session[:p2_done] = 0
       @sex_other_player = session[:sex_p2]
     end
     @actual_player = session[:who_play]
@@ -36,22 +40,24 @@ class GameController < ApplicationController
     else
       @sex_other_player = session[:sex_p1]
     end
+   
+    @p1_pass = session[:p1_pass]
+    @p2_pass = session[:p2_pass]
+    @p1_done = session[:p1_done]
+    @p2_done = session[:p2_done]
     
     #obtencion dos valores aleatorios
     @zone = ErogenousZone.get_random_zone(@sex_other_player)
-    p '---------------------'
-    p '@actual_playe '+@actual_player.to_s
-    p '@sex_other_player '+@sex_other_player.to_s
-    p '@zone '+@zone.to_s
     @act = ZoneAct.get_act_random(@zone.id) unless @zone.nil?
-    p '@act '+@act.to_s
    # @toy = Toy.get_toy_random(@zone.id, @act.id) unless @zone.nil? && @act.nil?
   end
   
   def pass_turn
     if session[:who_play] == 1
       session[:who_play] = 2
+      session[:p1_pass] = session[:p1_pass] +1
     else
+      session[:p2_pass] = session[:p2_pass] +1
       session[:who_play] = 1
     end
     redirect_to(play_path)
@@ -59,8 +65,10 @@ class GameController < ApplicationController
   
   def done
     if session[:who_play] == 1
+      session[:p1_done] = session[:p1_done] +1
       session[:who_play] = 2
     else
+      session[:p2_done] = session[:p2_done] +1
       session[:who_play] = 1
     end
     redirect_to(play_path)
