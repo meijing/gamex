@@ -7,7 +7,7 @@
       .span4
         .span1
           = get_image_by_sex(@sex_p1)
-          %h5= 'Jugador '.concat(@actual_player.to_s)
+          %h5= @p1_name
         .span2
           %h5= 'Has hecho: '+@p1_done.to_s
           %h5= 'Has pasado: '+@p1_pass.to_s
@@ -17,7 +17,7 @@
       .span4
         .span1
           = get_image_by_sex(@sex_p2)
-          %h5= 'Jugador '.concat(@actual_player.to_s)
+          %h5= @p2_name
         .span2
           %h5= 'Has hecho: '+ @p2_done.to_s
           %h5= 'Has pasado: '+@p2_pass.to_s
