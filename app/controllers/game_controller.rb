@@ -49,18 +49,22 @@ class GameController < ApplicationController
     
     if session[:who_play] == 1
       @sex_other_player = session[:sex_p2]
+      @zones = session['zones_player1']
+      @acts = session['acts_player1']
     else
       @sex_other_player = session[:sex_p1]
+      @zones = session['zones_player2']
+      @acts = session['acts_player2']
     end
-   
+    
     @p1_pass = session[:p1_pass]
     @p2_pass = session[:p2_pass]
     @p1_done = session[:p1_done]
     @p2_done = session[:p2_done]
     
     #obtencion dos valores aleatorios
-    @zone = ErogenousZone.get_random_zone(@sex_other_player)
-    @act = ZoneAct.get_act_random(@zone.id) unless @zone.nil?
+    @zone = ErogenousZone.get_random_zone(@sex_other_player,@zones)
+    @act = ZoneAct.get_act_random(@zone.id,@acts) unless @zone.nil?
    # @toy = Toy.get_toy_random(@zone.id, @act.id) unless @zone.nil? && @act.nil?
   end
   

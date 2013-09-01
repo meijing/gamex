@@ -1,6 +1,5 @@
 class WishController < ApplicationController
   def index
-    
     if session['select_p1'].nil?
       session['select_p1'] = 1
       session['player1_name'] = 'Jugador 1'
@@ -20,14 +19,18 @@ class WishController < ApplicationController
     if  @select_p1 == 1
        session['select_p1'] = 2
        if !params[:name].nil? and params[:name] != ''
-         session['player1_name'] = params[:name]
+         session['player1_name'] = params[:name]  
        end
+       session['zones_player1'] = params[:zone]
+       session['acts_player1'] = params[:act]
        redirect_to custom_wishes_path
     else
       session['select_p1'] = nil
       if !params[:name].nil? and params[:name] != ''
-        session['player2_name'] = params[:name]
+        session['player2_name'] = params[:name]  
       end
+      session['zones_player2'] = params[:zone]
+      session['acts_player2'] = params[:act]
       redirect_to play_path
     end
     

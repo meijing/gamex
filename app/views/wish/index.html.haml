@@ -15,7 +15,7 @@
                     Acciones
                   .checkbox
                     - Act.all.each do |act|
-                      =check_box_tag('act[]', act.id, false, :id=>act.id)
+                      =check_box_tag('act[]', act.id, true, :id=>act.id)
                       =label_tag act.description
               .span3
                 .well
@@ -23,7 +23,7 @@
                     Zonas erógenas
                   .checkbox
                     - ErogenousZone.all.each do |zone|
-                      =check_box_tag('zone[]', zone.id, false, :id=>zone.id)
+                      =check_box_tag('zone[]', zone.id, true, :id=>zone.id)
                       =label_tag zone.name
               
               .span3
