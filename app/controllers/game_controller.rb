@@ -35,6 +35,20 @@ class GameController < ApplicationController
     end
     @actual_player = session[:who_play]
     
+    p '-------------------------'
+    p session['player1_name']
+    if session['player1_name'].nil?
+      @p1_name = 'Jugador 1'
+    else
+      @p1_name = session['player1_name']
+    end
+    
+    if session['player2_name'].nil?
+      @p2_name = 'Jugador 2'
+    else
+      @p2_name = session['player2_name']
+    end
+    
     if session[:who_play] == 1
       @sex_other_player = session[:sex_p2]
     else
@@ -45,8 +59,6 @@ class GameController < ApplicationController
     @p2_pass = session[:p2_pass]
     @p1_done = session[:p1_done]
     @p2_done = session[:p2_done]
-    @p1_name = 'Jugador 1'
-    @p2_name = 'Jugador 2'
     
     #obtencion dos valores aleatorios
     @zone = ErogenousZone.get_random_zone(@sex_other_player)

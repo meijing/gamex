@@ -1,0 +1,42 @@
+.bs-docs-section
+  .row
+    .span12
+      .col-lg-6
+        .bs-example.form-horizontal
+          .well
+            = form_tag '/wish/save_wishes' do 
+              .form-group
+                .col-lg-10
+                  =text_field_tag 'name',nil,:placeholder => @name_player 
+                  Selecciona lo que te gusta que te hagan, dónde y además puedes decirnos si teneis algún juguete para añadirlo
+              .span3
+                .well
+                  %legend
+                    Acciones
+                  .checkbox
+                    - Act.all.each do |act|
+                      =check_box_tag('act[]', act.id, false, :id=>act.id)
+                      =label_tag act.description
+              .span3
+                .well
+                  %legend
+                    Zonas erógenas
+                  .checkbox
+                    - ErogenousZone.all.each do |zone|
+                      =check_box_tag('zone[]', zone.id, false, :id=>zone.id)
+                      =label_tag zone.name
+              
+              .span3
+                .well
+                  %legend
+                    Juguetes
+                  .checkbox
+                    - Toy.all.each do |toy|
+                      =check_box_tag('toy[]', toy.id, false, :id=>toy.id)
+                      =label_tag toy.name
+
+              .span12
+                - if @select_p1==1
+                  = submit_tag 'Guardar y continuar', :class=>'btn btn-primary'
+                - if @select_p1 != 1
+                  = submit_tag 'Guardar y continuar', :class=>'btn btn-primary'

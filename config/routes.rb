@@ -36,6 +36,10 @@ Sex::Application.routes.draw do
     match 'game/play' => 'game#play', :as => :play
     match 'game/done' => 'game#done', :as => :done
     match 'game/pass' => 'game#pass_turn', :as => :pass
+    
+  #para seleccion de desexos
+  match 'wishes' => 'wish#index', :as => :custom_wishes
+  match '/wish/save_wishes'=> 'wish#save_wishes', :as => :save_wishes
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

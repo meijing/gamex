@@ -1,5 +1,4 @@
 %h1 GameSex
-= link_to 'Management', home_path
 
 .container.proba_fondo5
   .row
@@ -13,7 +12,13 @@
           %h5= 'Has pasado: '+@p1_pass.to_s
       .span3
         .box
-          %h2= 'Jugador '.concat(@actual_player.to_s).concat('<br/> te toca').html_safe
+          %h2
+            -if @actual_player == 2
+              = @p1_name
+              = '<br/> te toca'.html_safe
+            -else
+              = @p2_name
+              = '<br/> te toca'.html_safe
       .span4
         .span1
           = get_image_by_sex(@sex_p2)
