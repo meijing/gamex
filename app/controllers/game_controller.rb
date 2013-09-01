@@ -35,19 +35,21 @@ class GameController < ApplicationController
     end
     @actual_player = session[:who_play]
     
+    if session['player1_name'].nil?
+      @p1_name = 'Jugador 1'
+    else
+      @p1_name = session['player1_name']
+    end
+    
+    if session['player2_name'].nil?
+      @p2_name = 'Jugador 2'
+    else
+      @p2_name = session['player2_name']
+    end
+    
     if session[:who_play] == 1
       @sex_other_player = session[:sex_p2]
-      if session['player1_name'].nil?
-        @p1_name = 'Jugador 1'
-      else
-        @p1_name = session['player1_name']
-      end
     else
-      if session['player2_name'].nil?
-        @p2_name = 'Jugador 2'
-      else
-        @p2_name = session['player2_name']
-      end
       @sex_other_player = session[:sex_p1]
     end
    
