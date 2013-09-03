@@ -2,12 +2,13 @@
 
 .container.proba_fondo5
   .row
-    .span6.proba_fondo4
+    .span12.proba_fondo4
       .box
         %h2 Jugador 1, elige:
         = get_sex_p1(@sex_p1, 'female.png', 1)
         = get_sex_p1(@sex_p1, 'male.png', 0)
-    .span6.proba_fondo4
+  .row
+    .span12.proba_fondo4
       .box
         %h2 Jugador 2, elige:
         = get_sex_p2(@sex_p2, 'female.png', 1)
