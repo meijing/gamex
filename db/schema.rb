@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814233934) do
+ActiveRecord::Schema.define(:version => 20130910175536) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130814233934) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "default"
   end
 
   create_table "erogenous_zones", :force => true do |t|
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20130814233934) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "sex"
+    t.integer  "default"
   end
 
   create_table "tips", :force => true do |t|
@@ -79,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20130814233934) do
     t.integer  "sex"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.integer  "high_level"
   end
 
 end

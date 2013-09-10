@@ -1,5 +1,5 @@
 class ZoneAct < ActiveRecord::Base
-   attr_accessible :act_id, :erogenous_zone_id, :sex
+   attr_accessible :act_id, :erogenous_zone_id, :sex, :high_level
    belongs_to :act
    belongs_to :erogenous_zone
    

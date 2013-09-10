@@ -6,4 +6,20 @@ module ZoneActsHelper
     end
     return @res[0]
   end
+  
+  def get_all_zones
+    @names = []
+    ErogenousZone.all.each do |z|
+      @names << [z.name, z.id]
+    end
+    return @names
+  end
+
+  def get_all_acts
+    @names = []
+    Act.all.each do |a|
+      @names << [a.description, a.id]
+    end
+    return @names
+  end
 end

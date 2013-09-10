@@ -44,8 +44,8 @@ class ZoneActsController < ApplicationController
 
     respond_to do |format|
       if @zone_act.save
-        format.html { redirect_to @zone_act, :notice => 'Zone act was successfully created.' }
-        format.json { render :json => @zone_act, :status => :created, :location => @zone_act }
+        format.html { redirect_to zone_acts_path }
+        
       else
         format.html { render :action => "new" }
         format.json { render :json => @zone_act.errors, :status => :unprocessable_entity }

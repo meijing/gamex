@@ -1,10 +1,16 @@
-= form_for @zone_act do |f|
-  - if @zone_act.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@zone_act.errors.count, "error")} prohibited this zone_act from being saved:"
-      %ul
-        - @zone_act.errors.full_messages.each do |msg|
-          %li= msg
-
+= form_for @zone_act do |f|  
+  .control-group
+    %label.control-label= 'Zone:'
+    .controls
+      = f.select :erogenous_zone_id, get_all_zones
+    %label.control-label= 'Act:'
+    .controls
+      = f.select :act_id, get_all_acts
+    %label.control-label= 'Sex: 0-Man ..... 1- Woman ..... 2 - Both'
+    .controls
+      = f.select :sex, [0,1,2]
+    %label.control-label= 'High level:'
+    .controls
+      = f.check_box :high_level
   .actions
     = f.submit 'Save'

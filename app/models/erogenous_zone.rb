@@ -1,5 +1,5 @@
 class ErogenousZone < ActiveRecord::Base
-   attr_accessible :name, :sex
+   attr_accessible :name, :sex, :default
    has_many :toy_zones
    has_many :zone_acts
    

@@ -13,5 +13,9 @@
     %label.control-label= 'Sex: (0 man, 1 woman, 2 both)'
     .controls
       = f.text_field :sex
+  .control-group
+    %label.control-label= 'Is default?'
+    .controls
+      = f.check_box :default
   .actions
     = f.submit 'Save'

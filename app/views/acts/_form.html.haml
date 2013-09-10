@@ -9,5 +9,9 @@
     %label.control-label= 'Description:'
     .controls
       = f.text_field :description
+  .control-group
+    %label.control-label= 'Is default?'
+    .controls
+      = f.check_box :default
   .actions
     = f.submit 'Save'
