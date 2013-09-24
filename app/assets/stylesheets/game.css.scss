@@ -22,9 +22,6 @@ background-color:#711324;
 background-color:#6a0a22;
 }
 .proba_fondo7{
-    margin:10px;
-    padding-top:20px;
-    padding-bottom:20px;
     text-align:center;
 }
 
@@ -36,53 +33,39 @@ background-color:#7c2629;
 }
 
 .box{
-    margin:20px;
     text-align:center;
 }
 
 .proba_fondo9{
-    margin:10px;
-    padding-top:20px;
-    padding-bottom:20px;
     text-align:center;
     background-color:#793c47;
 } 
 
-.header_footer_text{
-    margin-left:30%;
+.dado{
+    background-image:url('dado.png');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:70px 72px;
+    width:100%;
+    height:72px;
 }
-.text{
-    text-shadow: 5px 5px 10px #000000;
-    margin-left:23%;
+.text-play{
     text-align:center;
+    color:black;
+    text-shadow: 5px 5px 10px #793c47;
+    padding-top:15px;
 }
 
 .button_bar{
-    height: 90px;
-    width: 115px;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);  
-    display: inline-block;
-    *display:inline;
-    background-repeat:no-repeat;
-    background-position:right center;
+border: 2px solid blue;
 }
 
-.button_done{
-    background-image:url('clean.png');
+.probass{
+    width:100%;
+    height:30px;
+    text-align:center;
 }
 
 .button_done h3{
-    padding-top:2%;
     color:#1e262c;
-}
-
-.left{
-    padding-right:3%;
-    padding-top:3%;
-    text-align: right;
-}
-
-.right{
-    text-align: left;
-    padding-top:3%;
 }
