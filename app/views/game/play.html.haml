@@ -8,13 +8,29 @@
               = @p1_name
             -else
               = @p2_name
-      
-  .row
-    .dado
-      %h4.text-play= @act.description.gsub(" ", "<br/>").html_safe
 
-    .dado
-      %h4.text-play= @zone.name.gsub(" ", "<br/>").html_safe
+  .row
+    .span9
+      .dado
+        %h4.text-play= @act.description.gsub(" ", "<br/>").html_safe
+    .span3
+      .span1
+        = get_image_by_sex(@sex_p1)
+        %h5= @p1_name
+      .span2
+        %h5= 'Has hecho: '+@p1_done.to_s
+        %h5= 'Has pasado: '+@p1_pass.to_s
+  .row
+    .span9
+      .dado
+        %h4.text-play= @zone.name.gsub(" ", "<br/>").html_safe
+    .span3
+      .span1
+        = get_image_by_sex(@sex_p2)
+        %h5= @p2_name
+      .span2
+        %h5= 'Has hecho: '+ @p2_done.to_s
+        %h5= 'Has pasado: '+@p2_pass.to_s
   .row
     .probass
       = link_to (image_tag 'clean.png', :size=>'30x30'),done_path, :title => "Hecho"
