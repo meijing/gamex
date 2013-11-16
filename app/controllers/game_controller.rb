@@ -25,6 +25,14 @@ class GameController < ApplicationController
       #mostrar mensaje de errror 
     end
     
+    @num_rounds = session[:num_rounds]
+    if @num_rounds.nil?
+      @num_rounds = 0
+    else
+      session[:num_rounds] = @num_rounds+1
+      @num_rounds = session[:num_rounds]
+    end
+    
     if session[:who_play].nil?
       session[:who_play] = 1
       session[:p1_pass] = 0
@@ -63,8 +71,13 @@ class GameController < ApplicationController
     @p2_done = session[:p2_done]
     
     #obtencion dos valores aleatorios
-    @zone = ErogenousZone.get_random_zone(@sex_other_player,@zones)
-    @act = ZoneAct.get_act_random(@zone.id,@acts) unless @zone.nil?
+    begin 
+      @zone = ErogenousZone.get_random_zone(@sex_other_player,@zones)
+      p '-----------------------'
+      p @zone
+      @act = ZoneAct.get_act_random(@zone.id,@acts, @num_rounds) unless @zone.nil?
+    end while @act.nil?
+    @act = Act.find(@act.act_id)
    # @toy = Toy.get_toy_random(@zone.id, @act.id) unless @zone.nil? && @act.nil?
   end
   
