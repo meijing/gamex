@@ -28,6 +28,7 @@ class GameController < ApplicationController
     @num_rounds = session[:num_rounds]
     if @num_rounds.nil?
       @num_rounds = 0
+      session[:num_rounds] = @num_rounds
     else
       session[:num_rounds] = @num_rounds+1
       @num_rounds = session[:num_rounds]
@@ -75,6 +76,7 @@ class GameController < ApplicationController
       @zone = ErogenousZone.get_random_zone(@sex_other_player,@zones)
       p '-----------------------'
       p @zone
+      p @num_rounds
       @act = ZoneAct.get_act_random(@zone.id,@acts, @num_rounds) unless @zone.nil?
     end while @act.nil?
     @act = Act.find(@act.act_id)
