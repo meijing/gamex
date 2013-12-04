@@ -23,18 +23,9 @@
                     Zonas erógenas
                   .checkbox
                     - ErogenousZone.all.each do |zone|
-                      =check_box_tag('zone[]', zone.id, true, :id=>zone.id)
+                      =check_box_tag('zone[]', zone.id, (zone.sex == @sex.to_i or zone.sex == 2 and zone.is_default==1)?true:false, :id=>zone.id)
                       =label_tag zone.name
               
-              .span3
-                .well
-                  %legend
-                    Juguetes
-                  .checkbox
-                    - Toy.all.each do |toy|
-                      =check_box_tag('toy[]', toy.id, false, :id=>toy.id)
-                      =label_tag toy.name
-
               .span12
                 - if @select_p1==1
                   = submit_tag 'Guardar y continuar', :class=>'btn btn-primary'

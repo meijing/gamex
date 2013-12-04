@@ -6,7 +6,10 @@ background-color:#4c0a14;
 }
 
 .proba_fondo2{
-background-color:#3c1414;
+background-color:#b2aa70;
+border-radius: 55px 8px 55px 8px;
+color:#3c0f18;
+text-align:center;
 }
 .proba_fondo3{
 background-color:#560319;
@@ -41,17 +44,18 @@ background-color:#7c2629;
     background-color:#793c47;
 } 
 
-.dado{
-    background-image:url('dado.png');
-    
-    background-repeat:no-repeat;
-    background-position:center;
-    height:270px;
-}
 .text-play{
     text-align:center;
     color:black;
     text-shadow: 5px 5px 10px #793c47;
+}
+
+.fondo_dado{
+    background-image: url('dado.png');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:120px 122px;   
+    height: 140px;
 }
 
 .button_bar{

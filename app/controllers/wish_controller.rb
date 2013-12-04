@@ -1,5 +1,13 @@
 class WishController < ApplicationController
   def index
+    if session[:nplayer].nil?
+      @sex= session[:sex_p1]
+      session[:nplayer] = 1
+    else
+      @sex= session[:sex_p2]
+      session[:nplayer] = nil
+    end
+    
     if session['select_p1'].nil?
       session['select_p1'] = 1
       session['player1_name'] = 'Jugador 1'

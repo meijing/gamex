@@ -17,8 +17,8 @@ module GameHelper
   
   def get_image_by_sex(sex)
     if (sex==1.to_s)
-      return content_tag(:div, image_tag('female.png', :size=>"33x33"))
+      return content_tag(:span, image_tag('female.png', :size=>"33x33"))
     end
-    return content_tag(:div, image_tag('male.png', :size=>"33x33"))
+    return content_tag(:span, image_tag('male.png', :size=>"33x33"))
   end
 end

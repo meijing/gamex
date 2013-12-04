@@ -74,9 +74,9 @@ class GameController < ApplicationController
     #obtencion dos valores aleatorios
     begin 
       @zone = ErogenousZone.get_random_zone(@sex_other_player,@zones)
-      p '-----------------------'
+      p '-----------------------zzzzzzzz'
       p @zone
-      p @num_rounds
+      
       @act = ZoneAct.get_act_random(@zone.id,@acts, @num_rounds) unless @zone.nil?
     end while @act.nil?
     @act = Act.find(@act.act_id)
